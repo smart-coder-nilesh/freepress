@@ -23,5 +23,8 @@ jobs:
       - name : install dependencies
         run : npm install
 
+      - name : bootstrap install
+        run: npm install bootstrap@5
+
       - name : build project
         run: npm run build
