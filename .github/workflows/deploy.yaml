@@ -1,0 +1,27 @@
+name: new website static content deploy
+
+on:
+  push:
+    branches: [master]
+
+permission:
+  contents: write
+
+jobs:
+  build test and deploy:
+    runs-on: ubuntu-latest
+
+    steps :
+      - name : checkout master
+        uses : actions/checkout@v3
+
+      - name : setup project 
+        uses: actions/setup-node@v3
+        with:
+          node-version : 18
+
+      - name : install dependencies
+        run : npm install
+
+      - name : build project
+        run: npm run build
