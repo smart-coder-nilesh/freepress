@@ -24,6 +24,11 @@
   color: white;
 }
 
+.custom-divider {
+  border: thick;
+  color: rgb(224, 100, 23);
+  margin: 1rem 0;
+}
 .App-link {
   color: #61dafb;
 }

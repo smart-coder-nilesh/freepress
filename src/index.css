@@ -7,6 +7,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.divider {
+  border: thick;
+  height: 4px; /* Start with a thicker line */
+  background: linear-gradient(to right, 
+              rgba(35, 86, 215, 0) 0%,   /* Start with transparency */
+              rgb(8, 73, 236) 25%,  /* Thick part at the start */
+              rgb(8, 73, 236) 75%,  /* Thick part in the middle */
+              rgba(35, 86, 215, 0) 100%);
+  margin: 1rem 0; /* Spacing above and below the line */
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

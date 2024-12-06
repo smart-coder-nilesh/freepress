@@ -1,0 +1,53 @@
+/* Footer.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer {
+  background-color: #f9f9f9;
+}
+
+.footer h3, .footer h5 {
+  font-weight: 600;
+}
+
+.footer .logo {
+  font-size: 1.8rem;
+}
+
+.footer .social-icons img {
+  width: 20px;
+  height: 20px;
+}
+
+.footer .btn-primary {
+  font-family: archivo ;
+  background-color: #2356d7;
+  border-color: #2356d7;
+}
+
+.footer .btn-primary:hover {
+  background-color: #1e4ba3;
+}
+
+.footer .list-unstyled li {
+  margin: 5px 0;
+}
+
+.footer .container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (max-width: 768px) {
+  .footer .social-icons {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer .col-md-3 {
+    margin-bottom: 20px;
+  }
+}
