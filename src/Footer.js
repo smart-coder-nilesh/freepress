@@ -102,13 +102,12 @@ const Footer = () => {
                 </div>
 
                 {/* Footer Bottom */}
+                <footer class=" text-black py-3 text-center">
+                    <p>&copy; 2024 FreePress, Inc All rights reserved.</p>
+                </footer>
                 <div className="row mt-8 justify-content-center">
-                    <div className='col-md-6 text-md-center'>
-                        <span>&#169; 2024 Brand, Inc. | Privacy | Terms | Sitemap </span>
-                        
-                    </div>
                     <div className=' text-md-end'>
-                    <span className='p-2'>
+                        <span className='p-2'>
                             <a href='https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows' target='blank'>
                                 <img src={youtube}
                                     alt='youtube'

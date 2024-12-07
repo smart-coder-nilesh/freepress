@@ -29,3 +29,21 @@ jobs:
 
       - name : build project
         run: npm run build
+
+      - name : github pages to deploy static website
+        run: |
+         git config --global user.name "smart-coder-nilesh"
+         git config --global user.email "mishranilesh@gmail.com"
+
+         git checkout --orphan gh-pages
+
+         git rm -rf .
+
+         cp -r build/* ./
+
+         git add .
+
+         gir commit -m "Deploy to github pages"
+
+         git push origin gh-pages --force
+         git checkout master
