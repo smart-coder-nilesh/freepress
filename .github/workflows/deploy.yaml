@@ -43,7 +43,7 @@ jobs:
 
          git add .
 
-         gir commit -m "Deploy to github pages"
+         git commit -m "Deploy to github pages"
 
          git push origin gh-pages --force
          git checkout master
