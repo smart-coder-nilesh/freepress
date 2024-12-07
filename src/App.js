@@ -14,13 +14,13 @@ const App = () => {
         <div className="logo fw-bold fs-4"></div>
       </div>
         <nav>
-          <a href="https://www.cricbuzz.com/" className="me-3 text-decoration-none text-dark" target="_blank">
+          <a href="https://www.cricbuzz.com/" className="me-3 text-decoration-none text-dark" target="_blank" rel="noreferrer" >
             Sports
           </a>
-          <a href="https://timesofindia.indiatimes.com/business" className="me-3 text-decoration-none text-dark" target="_blank">
+          <a href="https://timesofindia.indiatimes.com/business" className="me-3 text-decoration-none text-dark" target="_blank" rel="noreferrer">
             Business
           </a>
-          <a href="#" className="text-decoration-none text-dark">
+          <a href="https://timesofindia.indiatimes.com/business" className="text-decoration-none text-dark">
             Health
           </a>
         </nav>

@@ -3,6 +3,7 @@ name: new website static content deploy
 on:
   push:
     branches: [master]
+  
 
 permissions:
   contents: write
