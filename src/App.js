@@ -1,85 +1,17 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import logo from "./assests/logo.png"; 
 import "./index.css";
 import Footer from "./Footer";
+import Headerwithsearch from "./Body/Headerwithsearch";
+import TrendingStories from "./Body/Trendingstories";
 
 const App = () => {
   return (
-    <div className="container my-4">
-      {/* Header */}
-      <header className="d-flex justify-content-between align-items-center mb-4">
-      <div className="d-flex align-items-center">
-        <img src={logo} alt="FreePress Logo" className="me-2" style={{ height: "70px" }} />
-        <div className="logo fw-bold fs-4"></div>
-      </div>
-        <nav>
-          <a href="https://www.cricbuzz.com/" className="me-3 text-decoration-none text-dark" target="_blank" rel="noreferrer" >
-            Sports
-          </a>
-          <a href="https://timesofindia.indiatimes.com/business" className="me-3 text-decoration-none text-dark" target="_blank" rel="noreferrer">
-            Business
-          </a>
-          <a href="https://timesofindia.indiatimes.com/business" className="text-decoration-none text-dark">
-            Health
-          </a>
-        </nav>
-        <div className="d-flex">
-          <input
-            type="text"
-            className="form-control me-2"
-            placeholder="Search for articles and news"
-          />
-          <button className="btn btn-primary">Search</button>
-        </div>
-      </header>
+
+    <div className="container mt-4" style={{maxWidth : '100%'}}>
+      < Headerwithsearch />
       <hr className="divider" />
-      {/* Trending Stories */}
-      <section className="mb-5">
-        <h2 className="text-center mb-4">Trending Stories</h2>
-        <div className="row">
-          {[
-            {
-              title: "Urban Trends",
-              description:
-                "Read about the latest urban development trends shaping cities worldwide.",
-              image: "https://loremflickr.com/600/600/urban", // Replace with real images
-            },
-            {
-              title: "Island Escape",
-              description:
-                "Discover hidden gems in island getaways and plan your next escape.",
-              image: "https://picsum.photos/600/600?random=2",
-            },
-            {
-              title: "Music Festivals",
-              description:
-                "Explore the most popular music festivals happening this year.",
-              image: "https://loremflickr.com/600/600/nature",
-            },
-            {
-              title: "Organic Living",
-              description:
-                "Learn about the health benefits of incorporating organic produce into your diet.",
-              image: "https://picsum.photos/600/600?random=3",
-            },
-          ].map((story, index) => (
-            <div className="col-md-6 col-lg-3 mb-4" key={index}>
-              <div className="card">
-                <img
-                  src={story.image}
-                  className="card-img-top"
-                  alt={story.title}
-                />
-                <div className="card-body">
-                  <h5 className="card-title">{story.title}</h5>
-                  <p className="card-text">{story.description}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      < TrendingStories />
 
       {/* Categories and Articles */}
       <section>

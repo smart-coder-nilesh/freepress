@@ -1,0 +1,44 @@
+#search-bar {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Rounded corners */
+    outline: none; /* Removes default outline */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
+#search-bar.has-suggestions {
+    border-bottom-left-radius: 0; /* Remove bottom corners */
+    border-bottom-right-radius: 0;
+    border-color : none ;
+}
+#search-bar:focus {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on focus */
+    border-color: #007bff; /* Highlight border on focus */
+}
+
+#suggestions {
+    border: 1px solid #ccc;
+    border-top: none;
+    max-height: 150px;
+    overflow-y: auto;
+    position: absolute;
+    width: calc(100%); /* Matches input width minus padding */
+    z-index: 1;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Matches input box shadow */
+    border-radius: 0 0 20px 20px; /* Rounded corners on the bottom */
+    box-sizing: border-box;
+    padding: 5px 0; /* Add spacing for suggestions */
+}
+
+.suggestion {
+    padding: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.suggestion:hover {
+    background-color: #f0f0f0; /* Highlight suggestion on hover */
+}
