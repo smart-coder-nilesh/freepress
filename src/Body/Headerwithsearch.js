@@ -55,7 +55,9 @@ const Headerwithsearch = () => {
                     Finance
                 </a>
             </nav>
-            <div className="search-container position-relative justify-content-end">
+            <div className = 'align-items-center'style={{display: "flex"}}>
+                
+            <div className="search-container position-relative">
                 <input
                     type="text"
                     id="search-bar"
@@ -77,8 +79,13 @@ const Headerwithsearch = () => {
                         ))}
                     </div>
                 )}
+                
             </div>
-            <button className="btn btn-primary col-md-1">Search</button>
+            <div>
+                <button className="btn btn-primary mx-2" style={{width: 'fit-content'}}>Search</button>
+            </div>
+            
+            </div>
         </header>
     );
 };
