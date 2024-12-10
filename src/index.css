@@ -6,15 +6,25 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white; /* Match the background of the header */
+ 
+  height: 110px; 
+}
 
 .divider {
   border: thick;
   height: 4px; /* Start with a thicker line */
   background: linear-gradient(to right, 
-              rgba(35, 86, 215, 0) 0%,   /* Start with transparency */
-              rgb(8, 73, 236) 25%,  /* Thick part at the start */
-              rgb(8, 73, 236) 75%,  /* Thick part in the middle */
-              rgba(35, 86, 215, 0) 100%);
+              rgba(8, 74, 240, 0) 0%,   /* Start with transparency */
+              rgb(1, 1, 2) 25%,  /* Thick part at the start */
+              rgb(4, 15, 44) 75%,  /* Thick part in the middle */
+              rgba(17, 0, 253, 0) 100%);
   margin: 1rem 0; /* Spacing above and below the line */
 }
 code {

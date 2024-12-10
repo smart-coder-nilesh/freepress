@@ -8,13 +8,18 @@ import Article from "./Body/Article";
 const App = () => {
   return (
 
-    <div className="container mt-4" style={{maxWidth : '100%'}}>
-      < Headerwithsearch />
-      <hr className="divider" />
+    <div className="container mt-4" style={{ maxWidth: '100%' }}>
+      <div className="fixed-header">
+        < Headerwithsearch />
+        <hr className="divider" />
+      </div>
+      <div>
+
       < TrendingStories />
       {/* Categories and Articles */}
-      <Article/ >
+      <Article />
       <Footer />
+      </div>
     </div>
   );
 };
