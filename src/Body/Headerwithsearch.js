@@ -24,8 +24,8 @@ const Headerwithsearch = () => {
             // Assuming the API returns a JSON array
             console.log(response.data)
             const title = response.data.map((items) => items.title);
-            title.filter(item => item.toLowerCase().includes(query.toLowerCase()))
-            setSuggestions(title);
+            const filter_title = title.filter(item => item.toLowerCase().includes(query.toLowerCase()))
+            setSuggestions(filter_title);
             // Initially show all news
         } catch (error) {
             console.error("Error fetching news:", error);
