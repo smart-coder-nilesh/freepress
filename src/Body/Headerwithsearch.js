@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../assests/logo.png";
 import "./style.css";
+import axios from "axios";
 
 const Headerwithsearch = () => {
     const [query, setQuery] = useState("");
     const [suggestions, setSuggestions] = useState([]);
+
 
     useEffect(() => {
         if (query.length > 0) {
@@ -15,10 +17,23 @@ const Headerwithsearch = () => {
         }
     }, [query]);
 
+    const fetchNews = async () => {
+        try {
+            const response = await axios.get("https://localhost:7267/api/getnews"); // Use fetch if preferred
+            // Assuming the API returns a JSON array
+            console.log(response.data)
+            const title = response.data.map((items) => items.title);
+            setSuggestions(title);
+            // Initially show all news
+        } catch (error) {
+            console.error("Error fetching news:", error);
+        }
+    };
     const loadSuggestions = (query) => {
-        const news = ["abc", "efg", "hik", "jkl", "mno"];
-        const filteredSuggestions = news.filter(s => s.toLowerCase().includes(query.toLowerCase()));
-        setSuggestions(filteredSuggestions);
+         fetchNews();
+        // const news = ["abc", "efg", "hik", "jkl", "mno"];
+        // const filteredSuggestions = news.filter(s => s.toLowerCase().includes(query.toLowerCase()));
+        // setSuggestions(filteredSuggestions);
     };
 
     const clearSuggestions = () => {
@@ -55,36 +70,36 @@ const Headerwithsearch = () => {
                     Finance
                 </a>
             </nav>
-            <div className = 'align-items-center'style={{display: "flex"}}>
-                
-            <div className="search-container position-relative">
-                <input
-                    type="text"
-                    id="search-bar"
-                    className={`form-control ${suggestions.length > 0 ? "has-suggestions" : ""}`}
-                    placeholder="Search for articles and news"
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                />
-                {suggestions.length > 0 && (
-                    <div id="suggestions">
-                        {suggestions.map((suggestion, index) => (
-                            <div
-                                key={index}
-                                className="suggestion"
-                                onClick={() => handleSuggestionClick(suggestion)}
-                            >
-                                {suggestion}
-                            </div>
-                        ))}
-                    </div>
-                )}
-                
-            </div>
-            <div>
-                <button className="btn btn-primary mx-2" style={{width: 'fit-content'}}>Search</button>
-            </div>
-            
+            <div className='align-items-center' style={{ display: "flex" }}>
+
+                <div className="search-container position-relative">
+                    <input
+                        type="text"
+                        id="search-bar"
+                        className={`form-control ${suggestions.length > 0 ? "has-suggestions" : ""}`}
+                        placeholder="Search for articles and news"
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                    />
+                    {suggestions.length > 0 && (
+                        <div id="suggestions">
+                            {suggestions.map((suggestion, index) => (
+                                <div
+                                    key={index}
+                                    className="suggestion"
+                                    onClick={() => handleSuggestionClick(suggestion)}
+                                >
+                                    {suggestion}
+                                </div>
+                            ))}
+                        </div>
+                    )}
+
+                </div>
+                <div>
+                    <button className="btn btn-primary mx-2" style={{ width: 'fit-content' }}>Search</button>
+                </div>
+
             </div>
         </header>
     );
