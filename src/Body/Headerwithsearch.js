@@ -17,7 +17,7 @@ const Headerwithsearch = () => {
         }
     }, [query]);
 
-    const fetchNews = async (query) => {
+    const loadSuggestions = async (query) => {
         try {
 
             const response = await axios.get("https://localhost:7267/api/getnews"); // Use fetch if preferred
@@ -31,12 +31,12 @@ const Headerwithsearch = () => {
             console.error("Error fetching news:", error);
         }
     };
-    const loadSuggestions = (query) => {
-         fetchNews(query);
-        // const news = ["abc", "efg", "hik", "jkl", "mno"];
-        // const filteredSuggestions = news.filter(s => s.toLowerCase().includes(query.toLowerCase()));
-        // setSuggestions(filteredSuggestions);
-    };
+    // const loadSuggestions = (query) => {
+    //      fetchNews(query);
+    //     // const news = ["abc", "efg", "hik", "jkl", "mno"];
+    //     // const filteredSuggestions = news.filter(s => s.toLowerCase().includes(query.toLowerCase()));
+    //     // setSuggestions(filteredSuggestions);
+    // };
 
     const clearSuggestions = () => {
         setSuggestions([]);
