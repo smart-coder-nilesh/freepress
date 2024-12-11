@@ -17,12 +17,14 @@ const Headerwithsearch = () => {
         }
     }, [query]);
 
-    const fetchNews = async () => {
+    const fetchNews = async (query) => {
         try {
+
             const response = await axios.get("https://localhost:7267/api/getnews"); // Use fetch if preferred
             // Assuming the API returns a JSON array
             console.log(response.data)
             const title = response.data.map((items) => items.title);
+            title.filter(item => item.toLowerCase().includes(query.toLowerCase()))
             setSuggestions(title);
             // Initially show all news
         } catch (error) {
@@ -30,7 +32,7 @@ const Headerwithsearch = () => {
         }
     };
     const loadSuggestions = (query) => {
-         fetchNews();
+         fetchNews(query);
         // const news = ["abc", "efg", "hik", "jkl", "mno"];
         // const filteredSuggestions = news.filter(s => s.toLowerCase().includes(query.toLowerCase()));
         // setSuggestions(filteredSuggestions);
