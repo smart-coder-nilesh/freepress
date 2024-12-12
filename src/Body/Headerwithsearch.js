@@ -4,6 +4,7 @@ import logo from "../assests/logo.png";
 import "./style.css";
 import axios from "axios";
 
+
 const Headerwithsearch = () => {
     const [query, setQuery] = useState("");
     const [suggestions, setSuggestions] = useState([]);
@@ -49,7 +50,7 @@ const Headerwithsearch = () => {
     };
 
     return (
-        <header className="d-flex justify-content-between align-items-center mb-4">
+        <header className="d-flex justify-content-between align-items-center mb-4 ">
             <div className="d-flex align-items-center">
                 <img src={logo} alt="FreePress Logo" className="me-2" style={{ height: "70px" }} />
                 <div className="logo fw-bold fs-4"></div>
@@ -103,7 +104,10 @@ const Headerwithsearch = () => {
                 </div>
 
             </div>
+
+            <hr className="divider" />
         </header>
+        
     );
 };
 

@@ -11,7 +11,6 @@ const App = () => {
     <div className="container mt-4" style={{ maxWidth: '100%' }}>
       <div className="fixed-header">
         < Headerwithsearch />
-        <hr className="divider" />
       </div>
       <div>
 

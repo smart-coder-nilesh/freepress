@@ -25,7 +25,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="footer bg-light py-5">
+        <footer className="footer bg-primary-subtle py-5">
             <div className="container">
                 {/* Logo */}
 
