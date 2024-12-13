@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import "../index.css"
 const TrendingStories = () => {
   const stories = [
     {
@@ -26,7 +26,7 @@ const TrendingStories = () => {
   ];
 
   return (
-    <section className="mb-5 bg-primary-subtle" style={{ marginTop : '110px'}}>
+    <section className="mb-5 bg-primary-subtle animate" style={{ marginTop : '90px'}}>
       <h2 className="text-center mb-4">Trending Stories</h2>
       <div className="row">
         {stories.map((story, index) => (

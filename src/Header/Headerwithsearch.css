@@ -8,6 +8,7 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     transition: box-shadow 0.3s ease-in-out; /* Smooth transition */
 }
+
 #search-bar.has-suggestions {
     border-bottom-left-radius: 0; /* Remove bottom corners */
     border-bottom-right-radius: 0;
@@ -42,3 +43,13 @@
 .suggestion:hover {
     background-color: #f0f0f0; /* Highlight suggestion on hover */
 }
+.divider {
+    border-bottom: thick;
+    height: 90px; /* Start with a thicker line */
+    background: linear-gradient(to right, 
+                rgba(8, 74, 240, 0) 0%,   /* Start with transparency */
+                rgb(59, 59, 73) 25%,  /* Thick part at the start */
+                rgb(59, 59, 73) 75%,  /* Thick part in the middle */
+                rgba(17, 0, 253, 0) 100%);
+     /* Spacing above and below the line */
+  }

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../assests/logo.png";
-import "./style.css";
+import "./Headerwithsearch.css";
 import axios from "axios";
+import ToggleSwitch from "../Body/Toggleswitch";
 
-
-const Headerwithsearch = () => {
+const Headerwithsearch = ({mode , toggleMode}) => {
     const [query, setQuery] = useState("");
     const [suggestions, setSuggestions] = useState([]);
 
@@ -50,26 +50,25 @@ const Headerwithsearch = () => {
     };
 
     return (
-        <header className="d-flex justify-content-between align-items-center mb-4 ">
+        <header className={`d-flex justify-content-between align-items-center mb-4 h-100 divider`}>
             <div className="d-flex align-items-center">
                 <img src={logo} alt="FreePress Logo" className="me-2" style={{ height: "70px" }} />
                 <div className="logo fw-bold fs-4"></div>
             </div>
-
             <nav>
-                <a href="https://www.cricbuzz.com/" className="me-3 text-decoration-none text-dark" target="_blank" rel="noreferrer">
+                <a href="https://www.cricbuzz.com/" className="me-3 text-decoration-none text-light" target="_blank" rel="noreferrer">
                     Sports
                 </a>
-                <a href="https://timesofindia.indiatimes.com/business" className="me-3 text-decoration-none text-dark" target="_blank" rel="noreferrer">
+                <a href="https://timesofindia.indiatimes.com/business" className="me-3 text-decoration-none text-light" target="_blank" rel="noreferrer">
                     Business
                 </a>
-                <a href="https://timesofindia.indiatimes.com/health" className="me-3 text-decoration-none text-dark " target="_blank" rel="noreferrer">
+                <a href="https://timesofindia.indiatimes.com/health" className="me-3 text-decoration-none text-light " target="_blank" rel="noreferrer">
                     Health
                 </a>
-                <a href="https://timesofindia.indiatimes.com/health" className="me-3 text-decoration-none text-dark " target="_blank" rel="noreferrer">
+                <a href="https://timesofindia.indiatimes.com/health" className="me-3 text-decoration-none text-light " target="_blank" rel="noreferrer">
                     Technology
                 </a>
-                <a href="https://timesofindia.indiatimes.com/health" className="me-3 text-decoration-none text-dark " target="_blank" rel="noreferrer">
+                <a href="https://timesofindia.indiatimes.com/health" className="me-3 text-decoration-none text-light " target="_blank" rel="noreferrer">
                     Finance
                 </a>
             </nav>
@@ -102,10 +101,12 @@ const Headerwithsearch = () => {
                 <div>
                     <button className="btn btn-primary mx-2" style={{ width: 'fit-content' }}>Search</button>
                 </div>
-
+                <div>
+                    < ToggleSwitch mode={mode} toggleMode={toggleMode}/>
+                </div>
             </div>
 
-            <hr className="divider" />
+            
         </header>
         
     );

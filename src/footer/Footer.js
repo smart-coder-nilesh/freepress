@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import logo from "./assests/logo.png";
+import logo from "../assests/logo.png";
 import "bootstrap/dist/css/bootstrap.min.css";
-import envelope from "./assests/env.png";
-import twitter from "./assests/twitter.png"
-import youtube from "./assests/youtube.png"
-import linkedin from "./assests/linkedin.png"
-import facebook from "./assests/facebook.png"
+import envelope from "../assests/env.png";
+import twitter from "../assests/twitter.png"
+import youtube from "../assests/youtube.png"
+import linkedin from "../assests/linkedin.png"
+import facebook from "../assests/facebook.png"
 
 const Footer = () => {
     const [email, setEmail] = useState('');
@@ -102,7 +102,7 @@ const Footer = () => {
                 </div>
 
                 {/* Footer Bottom */}
-                <footer class=" text-black py-3 text-center">
+                <footer className=" text-black py-3 text-center">
                     <p>&copy; 2024 FreePress, Inc All rights reserved.</p>
                 </footer>
                 <div className="row mt-8 justify-content-center">

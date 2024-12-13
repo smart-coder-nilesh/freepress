@@ -14,20 +14,20 @@ body {
   z-index: 1000;
   background-color: white; /* Match the background of the header */
  
-  height: 110px; 
+  height: 90px; 
 }
 
-.divider {
-  border: thick;
-  height: 4px; /* Start with a thicker line */
+.animate { /* Start with a thicker line */
   background: linear-gradient(to right, 
               rgba(8, 74, 240, 0) 0%,   /* Start with transparency */
-              rgb(1, 1, 2) 25%,  /* Thick part at the start */
-              rgb(4, 15, 44) 75%,  /* Thick part in the middle */
+              rgb(59, 59, 73) 25%,  /* Thick part at the start */
+              rgb(59, 59, 73) 75%,  /* Thick part in the middle */
               rgba(17, 0, 253, 0) 100%);
-  margin: 1rem 0; /* Spacing above and below the line */
+   /* Spacing above and below the line */
 }
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+

@@ -1,0 +1,62 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+.toggle-container {
+    width: 50px; /* Adjusted width to make it smaller */
+    padding: 0px; /* Reduced padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.toggle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 26px; /* Reduced height */
+    border-radius: 15px; /* Adjusted border radius */
+    padding: 3px; /* Reduced padding */
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.toggle.light {
+    background-color: #e0e0e0;
+}
+
+.toggle.dark {
+    background-color: #333;
+}
+
+.toggle .circle {
+    width: 20px; /* Reduced width */
+    height: 20px; /* Reduced height */
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 3s;
+    position: absolute;
+}
+
+.toggle.light .circle {
+    left: 3px; /* Adjusted position */
+}
+
+.toggle.dark .circle {
+    right: 3px; /* Adjusted position */
+}
+
+.toggle .icon {
+    font-size: 14px; /* Adjusted font size */
+}
+
