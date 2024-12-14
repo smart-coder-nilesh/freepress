@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../assests/logo.png";
+import red from "../assests/rednotify.png";
+import blue from "../assests/bluenotify.png"
 import "./Headerwithsearch.css";
 import axios from "axios";
 import ToggleSwitch from "../Body/Toggleswitch";
-
-const Headerwithsearch = ({mode , toggleMode}) => {
+import {apis} from "../Api/Api.js"
+const Headerwithsearch = ({ mode, toggleMode }) => {
     const [query, setQuery] = useState("");
     const [suggestions, setSuggestions] = useState([]);
 
@@ -21,7 +23,7 @@ const Headerwithsearch = ({mode , toggleMode}) => {
     const loadSuggestions = async (query) => {
         try {
 
-            const response = await axios.get("https://localhost:7267/api/getnews"); // Use fetch if preferred
+            const response = await axios.get(`${apis.headsearch}`); // Use fetch if preferred
             // Assuming the API returns a JSON array
             console.log(response.data)
             const title = response.data.map((items) => items.title);
@@ -98,17 +100,22 @@ const Headerwithsearch = ({mode , toggleMode}) => {
                     )}
 
                 </div>
-                <div>
+                <div style={{ display: "flex" }}>
                     <button className="btn btn-primary mx-2" style={{ width: 'fit-content' }}>Search</button>
                 </div>
-                <div>
-                    < ToggleSwitch mode={mode} toggleMode={toggleMode}/>
+                <div style={{ display: "flex" }}>
+                    <div>
+                        < ToggleSwitch mode={mode} toggleMode={toggleMode} />
+                    </div>
+                    <div >
+                        <img src={blue} alt="FreePress Logo" style={{ width: '25px', height: '25px', marginLeft : '15px', marginRight : '15px' }} />
+                    </div>
                 </div>
             </div>
 
-            
+
         </header>
-        
+
     );
 };
 

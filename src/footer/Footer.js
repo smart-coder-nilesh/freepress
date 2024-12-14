@@ -6,18 +6,42 @@ import twitter from "../assests/twitter.png"
 import youtube from "../assests/youtube.png"
 import linkedin from "../assests/linkedin.png"
 import facebook from "../assests/facebook.png"
+import { apis } from '../Api/Api';
 
 const Footer = () => {
     const [email, setEmail] = useState('');
     const [showModal, setShowModal] = useState(false); // State to manage modal visibility
-
+    const subcribermodel = {
+        Id : 0 ,
+        Email : email
+    }
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
     };
 
     const handleSubscribe = (e) => {
-        e.preventDefault();
-        setShowModal(true); // Show modal when user subscribes
+        console.log(apis.subcriber)
+
+        fetch('https://localhost:7267/Api/Subscribe', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json', // Set header to JSON
+            },
+            body: JSON.stringify(subcribermodel), // Send email as a JSON object
+        })
+        .then((response) => {
+            if (response.ok) {
+                setShowModal(true); // Show success modal
+            } else {
+                throw new Error('Error registering your email');
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            alert('Something went wrong, please try again.');
+        });
+        
+         // Show modal when user subscribes
     };
 
     const handleCloseModal = () => {
@@ -25,7 +49,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="footer bg-primary-subtle py-5">
+        <footer className="footer bg-primary-subtle py-2">
             <div className="container">
                 {/* Logo */}
 
@@ -59,53 +83,17 @@ const Footer = () => {
                                     onChange={handleEmailChange}
                                     required
                                 />
-                                <button type="submit" className="btn btn-primary">
+                                <button type="submit" className="btn btn-primary" >
                                     Subscribe
                                 </button>
                             </div>
                         </form>
                     </div>
                 </div>
-
-                {/* Footer Links */}
-                <div className="row">
-                    <div className="col-md-3">
-                        <h5>Product</h5>
-                        <ul className="list-unstyled">
-                            <li>Features</li>
-                            <li>Pricing</li>
-                        </ul>
-                    </div>
-                    <div className="col-md-3">
-                        <h5>Resources</h5>
-                        <ul className="list-unstyled">
-                            <li>Blog</li>
-                            <li>User guides</li>
-                            <li>Webinars</li>
-                        </ul>
-                    </div>
-                    <div className="col-md-3">
-                        <h5>Company</h5>
-                        <ul className="list-unstyled">
-                            <li>About us</li>
-                            <li>Contact us</li>
-                        </ul>
-                    </div>
-                    <div className="col-md-3">
-                        <h5>Plans & Pricing</h5>
-                        <ul className="list-unstyled">
-                            <li>Personal</li>
-                            <li>Start up</li>
-                            <li>Organization</li>
-                        </ul>
-                    </div>
-                </div>
-
                 {/* Footer Bottom */}
-                <footer className=" text-black py-3 text-center">
+                <div className=" text-black py-3 justify-content-center" style={{display :'flex'}}>
                     <p>&copy; 2024 FreePress, Inc All rights reserved.</p>
-                </footer>
-                <div className="row mt-8 justify-content-center">
+                    <div className="row mt-8 justify-content-end">
                     <div className=' text-md-end'>
                         <span className='p-2'>
                             <a href='https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows' target='blank'>
@@ -145,6 +133,8 @@ const Footer = () => {
                         </span>
                     </div>
                 </div>
+                </div>
+                
             </div>
 
             {/* Modal for Thank You Message */}
