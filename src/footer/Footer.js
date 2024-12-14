@@ -7,13 +7,12 @@ import youtube from "../assests/youtube.png"
 import linkedin from "../assests/linkedin.png"
 import facebook from "../assests/facebook.png"
 import { apis } from '../Api/Api';
-
+import axios  from 'axios';
 const Footer = () => {
     const [email, setEmail] = useState('');
     const [showModal, setShowModal] = useState(false); // State to manage modal visibility
     const subcribermodel = {
-        Id : 0 ,
-        Email : email
+        Email : {email}
     }
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -21,25 +20,20 @@ const Footer = () => {
 
     const handleSubscribe = (e) => {
         console.log(apis.subcriber)
-
-        fetch('https://localhost:7267/Api/Subscribe', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json', // Set header to JSON
-            },
-            body: JSON.stringify(subcribermodel), // Send email as a JSON object
-        })
-        .then((response) => {
-            if (response.ok) {
-                setShowModal(true); // Show success modal
-            } else {
-                throw new Error('Error registering your email');
-            }
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-            alert('Something went wrong, please try again.');
-        });
+        try { 
+            fetch('http://localhost:7267/Api/Subscribe', {
+                 method: 'POST', 
+                 headers: { 'Content-Type': 'application/json' }, 
+                 body: JSON.stringify({
+                    Email : email.toString()
+                }) })
+            .then(response => response.data) 
+            .then(data => console.log('Item added:', data)) 
+            .catch(error => console.error('Error adding item:', error));
+        } catch (error) {
+         console.error('There was an error adding the item!', error); 
+        }
+        
         
          // Show modal when user subscribes
     };
